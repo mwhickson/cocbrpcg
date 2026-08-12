@@ -35,7 +35,7 @@
 
     <script>
         const DEFAULT_MOVE_RATE = 8;
-        const DEFAULT_CHARACTERSTIC_VALUE_ARRAY = [ 40, 50, 50, 50, 60, 60, 70, 80 ];
+        const DEFAULT_CHARACTERISTIC_VALUE_ARRAY = [ 40, 50, 50, 50, 60, 60, 70, 80 ];
         const PERSONAL_INTEREST_SKILL_BONUS_ARRAY = [20, 20, 20, 20];
 
         class Characteristic {
@@ -110,19 +110,25 @@
 
         class SecondaryAttributeValue {
             #attribute = null;
-            #value = 0;
+            #maximumValue = 0;
+            #currentValue = 0;
 
-            constructor(attribute, value) {
+            constructor(attribute, maximumValue, currentValue) {
                 this.#attribute = attribute;
-                this.#value = parseInt(value) ?? 0;
+                this.#maximumValue = parseInt(maximumValue) ?? 0;
+                this.#currentValue = parseInt(currentValue) ?? 0;
             }
 
             get Attribute() {
                 return this.#attribute;
             }
 
-            get Value() {
-                return this.#value;
+            get MaximumValue() {
+                return this.#maximumValue;
+            }
+
+            get CurrentValue() {
+                return this.#currentValue;
             }
 
             static CalculateDamageBonus(strength, size) {
@@ -195,7 +201,7 @@
             constructor(name, defaultValue, customizable) {
                 this.#name = String(name);
                 this.#defaultValue = parseInt(defaultValue) ?? 0;
-                this.#customizable = parseBoolean(customizable) ?? false;
+                this.#customizable = Boolean(customizable) ?? false;
             }
 
             get Name() {
@@ -214,10 +220,12 @@
         class SkillValue {
             #skill = null;
             #value = 0;
+            #specialization = null;
 
-            constructor(skill, value) {
+            constructor(skill, value, specialization) {
                 this.#skill = String(skill);
                 this.#value = parseInt(value) ?? 0;
+                this.#specialization = String(specialization);
             }
 
             get Skill() {
@@ -242,6 +250,10 @@
 
             get Extreme() {
                 return this.Fifth();
+            }
+
+            get Specialization() {
+                return this.#specialization;
             }
 
             static CalculateDefaultDodge(dexterity) {
@@ -271,6 +283,143 @@
             }
         }
 
+        class BackstoryEntry {
+            #detail = null;
+
+            constructor(detail) {
+                this.#detail = detail;
+            }
+
+            get Detail() {
+                return this.#detail;
+            }
+        }
+
+        class Possession {
+            description = null;
+
+            constructor(description) {
+                this.description = description;
+            }
+
+            get Description() {
+                return this.description;
+            }
+        }
+
+        class Condition {
+            #name;
+
+            constructor(name) {
+                this.#name = name;
+            }
+
+            get Name() {
+                return this.#name;
+            }
+        }
+
+        class CoC7Character {
+            #name = null;
+            #birthplace = null;
+            #pronouns = null;
+            #occupation = null;
+            #residence = null;
+            #age = null;
+            #portrait = null;
+
+            #characteristics = [];
+            #secondaryAttributes = [];
+            #conditions = [];
+            #skills = [];
+            #backstoryEntries = [];
+            #possessions = [];
+
+            constructor() {
+                // TODO:
+                this.#name = null;
+                this.#birthplace = null;
+                this.#pronouns = null;
+                this.#occupation = null;
+                this.#residence = null;
+                this.#age = null;
+                this.#portrait = null;
+
+                this.#characteristics = [];
+                this.#secondaryAttributes = [];
+                this.#conditions = [];
+                this.#skills = [];
+                this.#backstoryEntries = [];
+                this.#possessions = [];
+            }
+
+            get Name() {
+                return this.#name;
+            }
+
+            get Birthplace() {
+                return this.#birthplace;
+            }
+
+            get Pronouns() {
+                return this.#pronouns;
+            }
+
+            get Occupation() {
+                return this.#occupation;
+            }
+
+            get Residence() {
+                return this.#residence;
+            }
+
+            get Age() {
+                return this.#age;
+            }
+
+            get Portrait() {
+                return this.#portrait;
+            }
+
+            get Characteristics() {
+                return this.#characteristics;
+            }
+
+            get SecondaryAttributes() {
+                return this.#secondaryAttributes;
+            }
+
+            get Conditions() {
+                return this.#conditions;
+            }
+
+            get Skills() {
+                return this.#skills;
+            }
+
+            get BackstoryEntries() {
+                return this.#backstoryEntries;
+            }
+
+            get Possessions() {
+                return this.#possessions;
+            }
+        }
+
+        class CharacterView {
+            #character = null;
+
+            constructor(character) {
+                this.#character = character;
+            }
+
+            get Character() {
+                return this.#character;
+            }
+
+            // TODO: Combat Quick Reference...
+        }
+
         const Characteristics = [
             new Characteristic("Strength", "STR"),
             new Characteristic("Constitution", "CON"),
@@ -292,51 +441,52 @@
             new SecondaryAttribute("Luck", "Luck"),
         ];
 
+        // NOTE: these could be tailored by genre
         const Skills = [
             new Skill("Accounting", 5, false),
             new Skill("Anthropology", 1, false),
             new Skill("Appraise", 5, false),
             new Skill("Archaeology", 1, false),
-            new Skill("Art and Craft", 5, true),
+            new Skill("Art/Craft", 5, true), // "Art and Craft"
             new Skill("Charm", 15, false),
             new Skill("Climb", 20, false),
-            new Skill("Credit Rating", 0, false),
-            new Skill("Cthulhu Mythos", 0, false),
-            new Skill("Custom", null, true),
+            new Skill("Credit Rating", 0, false), // reskin: "Wealth"
+            new Skill("Cthulhu Mythos", 0, false), // genre-specific
+            new Skill("Custom", null, true), // WARN: Custom catch-all
             new Skill("Disguise", 5, false),
             new Skill("Dodge", null, false), // SkillValue.CalculateDefaultDodge()
-            new Skill("Drive Auto", 20, false),
-            new Skill("Electrical Repair", 10, false),
+            new Skill("Drive Auto", 20, false), // genre-specific
+            new Skill("Electrical Repair", 10, false), // genre-specific
             new Skill("Fast Talk", 5, false),
             new Skill("Fighting", null, true),
-            new Skill("Fighting (Brawl)", 25, false),
-            new Skill("Firearms", null, true),
-            new Skill("Firearms (Handgun)", 20, false),
-            new Skill("Firearms (Rifle/Shotgun)", 25, false),
+            // new Skill("Fighting (Brawl)", 25, false),
+            new Skill("Firearms", null, true), // genre-specific
+            // new Skill("Firearms (Handgun)", 20, false),
+            // new Skill("Firearms (Rifle/Shotgun)", 25, false),
             new Skill("First Aid", 30, false),
             new Skill("History", 5, false),
             new Skill("Intimidate", 15, false),
             new Skill("Jump", 20, false),
             new Skill("Language, Other", 1, true),
-            new Skill("Language (Own)", null, false), // SkillValue.CalculateDefaultLanguageOwn()
+            // new Skill("Language (Own)", null, false), // SkillValue.CalculateDefaultLanguageOwn()
             new Skill("Law", 5, false),
-            new Skill("Library Use", 20, false),
+            new Skill("Library Use", 20, false), // reskin: "Research"
             new Skill("Listen", 20, false),
             new Skill("Locksmith", 1, false),
-            new Skill("Mechanical Repair", 10, false),
+            new Skill("Mechanical Repair", 10, false), // genre-specific (sort of)
             new Skill("Medicine", 1, false),
             new Skill("Natural World", 10, false),
             new Skill("Navigate", 10, false),
-            new Skill("Occult", 5, false),
-            new Skill("Operate Heavy Machinery", null, false),
+            new Skill("Occult", 5, false), // genre-specific
+            new Skill("Operate Heavy Machinery", null, false), // genre-specific // NOTE: does not appear on character sheet
             new Skill("Persuade", 10, false),
             new Skill("Pilot", 1, true),
-            new Skill("Psychoanalysis", 1, false),
+            new Skill("Psychoanalysis", 1, false), // genre-specific
             new Skill("Pyschology", 10, false),
             new Skill("Ride", 5, false),
             new Skill("Science", 1, true),
             new Skill("Sleight of Hand", 10, false),
-            new Skill("Spot Hidden", 25, false),
+            new Skill("Spot Hidden", 25, false), // reskin: "Notice" / "Search" ?
             new Skill("Stealth", 20, false),
             new Skill("Survival", 10, true),
             new Skill("Swim", 20, false),
@@ -354,7 +504,15 @@
             new Occupation("Private Investigator", []), // Art/Craft (Photography), Disguise, Law, Library Use, one interpersonal skill (Charm, Fast Talk, Initimidate or Persuade), Psychology, Spot Hidden, and any one other skill
             new Occupation("Professor", []), // Library Use, Language, Own Language, Psychology, any four other skills as academic or personal specialties
         ];
-    </script>
+
+        const Conditions = [
+            new Condition("Temporary Insanity"),
+            new Condition("Indefinite Insanity"),
+            new Condition("Major Wound"),
+            new Condition("Unconscious"),
+            new Condition("Dying"),
+        ];
+</script>
 </body>
 
 </html>
