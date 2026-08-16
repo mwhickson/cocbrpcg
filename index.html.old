@@ -16,6 +16,64 @@
         max-width: 1200px;
         width: 100%;
     }
+
+    /* kinda like Tailwind, but it's not... */
+
+    .db {
+        display: block;
+    }
+
+    .df {
+        display: flex;
+    }
+
+    .fx1 {
+        display: inline-block;
+    }
+
+    .fxa {
+        flex: auto;
+    }
+
+    .fx1 {
+        flex: 1;
+    }
+
+    .fxh {
+        flex-direction: row;
+    }
+
+    .fxv {
+        flex-direction: column;
+    }
+
+    .mw100 {
+        max-width: 100%;
+    }
+
+    .nb {
+        border: none;
+    }
+
+    .w25 {
+        width: 25%;
+    }
+
+    .w33 {
+        width: 33%;
+    }
+
+    .w50 {
+        width: 50%;
+    }
+
+    .w75 {
+        width: 75%;
+    }
+
+    .w100 {
+        width: 100%;
+    }
     </style>
 </head>
 
@@ -28,9 +86,202 @@
         <strong><a href="https://www.chaosium.com/call-of-cthulhu-starter-set/" target="_blank">Call of Cthulhu Starter Set (CHA23178-X)</a></strong>.
         </p>
 
-        <p>
-        TODO:
-        </p>
+        <div>
+            <form>
+                <fieldset class="df mw100 nb">
+                    <label class="fx1 w33">
+                        Name
+                        <input type="text" id="Name" name="Name">
+                    </label>
+
+                    <label class="fx1 w33">
+                        Birthplace
+                        <input type="text" id="Birthplace" Name="Birthplace">
+                    </label>
+
+                    <label class="fx1 w33">
+                        Pronouns
+                        <input type="text" id="Pronouns" Name="Pronouns">
+                    </label>
+
+                    <label class="fx1 w33">
+                        Occupation
+                        <input type="text" id="Occupation" Name="Occupation">
+                    </label>
+
+                    <label class="fx1 w33">
+                        Residence
+                        <input type="text" id="Residence" Name="Residence">
+                    </label>
+
+                    <label class="fx1 w33">
+                        Age
+                        <input type="text" id="Age" Name="Age">
+                    </label>
+                </fieldset>
+
+                <fieldset class="df mw100 nb">
+                    <legend>Characteristics</legend>
+
+                    <label class="df fx1">
+                        <abbrev title="Strength">STR</abbrev>
+                        <input type="text" id="RegularStrength" Name="RegularStrength" class="fx1 w25">
+                        <label id="HalfStrength" class="fx1 w25">1/2</label>
+                        <label id="FifthStrength" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        <abbrev title="Constitution">CON</abbrev>
+                        <input type="text" id="RegularConstitution" Name="RegularConstitution" class="fx1 w25">
+                        <label id="HalfConstitution" class="fx1 w25">1/2</label>
+                        <label id="FifthConstitution" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        <abbrev title="Dexterity">DEX</abbrev>
+                        <input type="text" id="RegularDexterity" Name="RegularDexterity" class="fx1 w25">
+                        <label id="HalfDexterity" class="fx1 w25">1/2</label>
+                        <label id="FifthDexterity" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        <abbrev title="Intelligence">INT</abbrev>
+                        <span>IDEA</span>
+                        <input type="text" id="RegularIntelligence" Name="RegularIntelligence" class="fx1 w25">
+                        <label id="HalfIntelligence" class="fx1 w25">1/2</label>
+                        <label id="FifthIntelligence" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        <abbrev title="Size">SIZ</abbrev>
+                        <input type="text" id="RegularSize" Name="RegularSize" class="fx1 w25">
+                        <label id="HalfSize" class="fx1 w25">1/2</label>
+                        <label id="FifthSize" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        <abbrev title="Power">POW</abbrev>
+                        <input type="text" id="RegularPower" Name="RegularPower" class="fx1 w25">
+                        <label id="HalfPower" class="fx1 w25">1/2</label>
+                        <label id="FifthPower" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        <abbrev title="Appearance">APP</abbrev>
+                        <input type="text" id="RegularAppearance" Name="RegularAppearance" class="fx1 w25">
+                        <label id="HalfAppearance" class="fx1 w25">1/2</label>
+                        <label id="FifthAppearance" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        <abbrev title="Education">EDU</abbrev>
+                        <span>KNOW</span>
+                        <input type="text" id="RegularEducation" Name="RegularEducation" class="fx1 w25">
+                        <label id="HalfEducation" class="fx1 w25">1/2</label>
+                        <label id="FifthEducation" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        Hit Points
+                        <input type="text" id="CurrentHitPoints" Name="CurrentHitPoints" class="fx1 w25">
+                        <input type="text" id="MaximumHitPoints" Name="MaximumHitPoints" class="fx1 w25">
+                    </label>
+
+                    <label class="df fx1">
+                        Magic Points
+                        <input type="text" id="CurrentMagicPoints" Name="CurrentMagicPoints" class="fx1 w25">
+                        <input type="text" id="MaximumMagicPoints" Name="MaximumMagicPoints" class="fx1 w25">
+                    </label>
+
+                    <label class="df fx1">
+                        Luck
+                        <input type="text" id="CurrentLuck" Name="CurrentLuck" class="fx1 w25">
+                        <input type="text" id="MaximumLuck" Name="MaximumLuck" class="fx1 w25">
+                    </label>
+
+                    <label class="df fx1">
+                        Sanity
+                        <input type="text" id="StartingSanity" Name="StartingSanity" class="fx1 w25">
+                        <input type="text" id="CurrentSanity" Name="CurrentSanity" class="fx1 w25">
+                        <input type="text" id="InsaneSanity" Name="InsaneSanity" class="fx1 w25">
+                    </label>
+                </fieldset>
+
+                <fieldset class="df mw100 nb w100">
+                    <legend>Conditions</legend>
+
+                    <label class="fxa">
+                        Sanity
+                        <input type="text" id="MaximumSanity" Name="MaximumSanity" class="w25">
+                    </label>
+
+                    <label class="fxa">
+                        Temporary Insanity
+                        <input type="checkbox" id="TemporaryInsanity" Name="TemporaryInsanity">
+                    </label>
+
+                    <label class="fxa">
+                        Indefinite Insanity
+                        <input type="checkbox" id="IndefiniteInsanity" Name="IndefiniteInsanity">
+                    </label>
+
+                    <label class="fxa">
+                        Major Wound
+                        <input type="checkbox" id="MajorWound" Name="MajorWound">
+                    </label>
+
+                    <label class="fxa">
+                        Unconscious
+                        <input type="checkbox" id="Unconscious" Name="Unconscious">
+                    </label>
+
+                    <label class="fxa">
+                        Dying
+                        <input type="checkbox" id="Dying" Name="Dying">
+                    </label>
+                </fieldset>
+
+                <fieldset class="df mw100 nb">
+                    <legend>Skills</legend>
+
+                    <label class="df fx1">
+                        Accounting
+                        <span class="default">(05%)</span>
+                        <input type="text" id="RegularAccounting" Name="RegularAccounting" class="fx1 w25">
+                        <label id="HalfAccounting" class="fx1 w25">1/2</label>
+                        <label id="FifthAccounting" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        Anthropology
+                        <span class="default">(01%)</span>
+                        <input type="text" id="RegularAnthropology" Name="RegularAnthropology" class="fx1 w25">
+                        <label id="HalfAnthropology" class="fx1 w25">1/2</label>
+                        <label id="FifthAnthropology" class="fx1 w25">1/5</label>
+                    </label>
+
+                    <label class="df fx1">
+                        Appraise
+                        <span class="default">(05%)</span>
+                        <input type="text" id="RegularAppraise" Name="RegularAppraise" class="fx1 w25">
+                        <label id="HalfAppraise" class="fx1 w25">1/2</label>
+                        <label id="FifthAppraise" class="fx1 w25">1/5</label>
+                    </label>
+                </fieldset>
+
+                <fieldset class="df mw100 nb">
+                    <legend>Possessions</legend>
+                </fieldset>
+
+                <fieldset class="df mw100 nb">
+                    <legend>Backstory</legend>
+                </fieldset>
+
+                <fieldset class="df mw100 nb">
+                    <legend>Notes</legend>
+                </fieldset>
+            </form>
+        </div>
     </div>
 
     <script>
@@ -287,7 +538,7 @@
             #detail = null;
 
             constructor(detail) {
-                this.#detail = detail;
+                this.#detail = String(detail);
             }
 
             get Detail() {
@@ -299,7 +550,7 @@
             description = null;
 
             constructor(description) {
-                this.description = description;
+                this.description = String(description);
             }
 
             get Description() {
@@ -311,7 +562,7 @@
             #name;
 
             constructor(name) {
-                this.#name = name;
+                this.#name = String(name);
             }
 
             get Name() {

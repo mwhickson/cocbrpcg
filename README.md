@@ -8,9 +8,4 @@ REF: https://www.chaosium.com/call-of-cthulhu-starter-set/
 
 ## TODO
 
-- HTML user interface
-    - design
-    - validation
-    - printing
-- code
-    - classes: CoC7Character
+- convert to Avalonia (.NET)
