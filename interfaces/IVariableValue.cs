@@ -1,7 +1,7 @@
 namespace cocbrpcg;
 public interface IVariableValue
 {
-    int CurrentValue { get; set; }
-    int MaximumValue { get; set; }
-    int MinimumValue { get; set; }
+    int CurrentValue { get; }
+    int MaximumValue { get; }
+    int MinimumValue { get; }
 }
