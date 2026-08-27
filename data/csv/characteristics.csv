@@ -1,0 +1,9 @@
+id,name,code
+1,Strength,STR
+2,Constitution,CON
+3,Power,POW
+4,Dexterity,DEX
+5,Appearance,APP
+6,Size,SIZ
+7,Intelligence,INT
+8,Education,EDU

@@ -1,12 +1,12 @@
 using cocbrpcg.Entities;
 
-namespace cocbrpcg.Views;
+namespace cocbrpcg.ViewModels;
 
-public class CharacterView
+public class CharacterViewModel
 {
     private readonly Character character;
 
-    CharacterView(Character character)
+    CharacterViewModel(Character character)
     {
         this.character = character;
     }

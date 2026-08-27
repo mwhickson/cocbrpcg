@@ -1,0 +1,7 @@
+CREATE TABLE "Skills" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT NOT NULL UNIQUE,
+	"default_value"	INTEGER NOT NULL,
+	"customizable"	INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)

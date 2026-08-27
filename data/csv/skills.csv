@@ -1,0 +1,47 @@
+id,name,default_value,customizable
+1,Accounting,5,0
+2,Anthropology,1,0
+3,Appraise,5,0
+4,Archaeology,1,0
+5,Art/Craft,5,1
+6,Charm,15,0
+7,Climb,20,0
+8,Credit Rating,0,0
+9,Cthulhu Mythos,0,0
+10,Custom,0,1
+11,Disguise,5,0
+12,Dodge,0,0
+13,Drive Auto,20,0
+14,Electrical Repair,10,0
+15,Fast Talk,5,0
+16,Fighting,0,1
+17,Firearms,0,1
+18,First Aid,30,0
+19,History,5,0
+20,Intimidate,15,0
+21,Jump,20,0
+22,"Language, Other",1,1
+23,"Language, Own",0,0
+24,Law,5,0
+25,Library Use,20,0
+26,Listen,20,0
+27,Locksmith,1,0
+28,Mechanical Repair,10,0
+29,Medicine,1,0
+30,Natural World,10,0
+31,Navigate,10,0
+32,Occult,5,0
+33,Operate Heavy Machinery,0,0
+34,Persuade,10,0
+35,Pilot,1,1
+36,Psychoanalysis,1,0
+37,Psychology,10,0
+38,Ride,5,0
+39,Science,1,1
+40,Sleight of Hand,10,0
+41,Spot Hidden,25,0
+42,Stealth,20,0
+43,Survival,10,1
+44,Swim,20,0
+45,Throw,20,0
+46,Track,10,0
