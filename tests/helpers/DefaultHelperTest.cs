@@ -1,6 +1,6 @@
-﻿namespace tests;
+﻿namespace cocbrpcg.tests;
 
-public class Tests
+public class DefaultHelperTest
 {
     [SetUp]
     public void Setup()
