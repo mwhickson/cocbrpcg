@@ -22,17 +22,17 @@ public class SkillValue: IScaledValue
 
     public int Value
     {
-        get { return this.Value; }
+        get { return this.value; }
     }
 
     public int Half
     {
-        get { return (int)Math.Floor(this.Value / 2.0d); }
+        get { return (int)Math.Floor(this.value / 2.0d); }
     }
 
     public int Fifth
     {
-        get { return (int)Math.Floor(this.Value / 5.0d); }
+        get { return (int)Math.Floor(this.value / 5.0d); }
     }
 
     public string? Specialization
