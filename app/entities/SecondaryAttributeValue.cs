@@ -5,9 +5,9 @@ namespace cocbrpcg.Entities;
 public class SecondaryAttributeValue: IVariableValue
 {
     private readonly SecondaryAttribute attribute;
-    private readonly int currentValue;
-    private readonly int maximumValue;
-    private readonly int minimumValue;
+    private readonly int currentValue; // TODO: ensure greater than or equal to minimumValue
+    private readonly int maximumValue; // TODO: ensure greater than or equal to minimumValue (and currentValue)
+    private readonly int minimumValue; // TODO: ensure less than or equal to maximumValue (and currentValue)
 
     public SecondaryAttributeValue(SecondaryAttribute attribute, int maximumValue, int currentValue, int minimumValue = 0)
     {
