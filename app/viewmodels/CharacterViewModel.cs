@@ -6,7 +6,7 @@ public class CharacterViewModel
 {
     private readonly Character character;
 
-    CharacterViewModel(Character character)
+    public CharacterViewModel(Character character)
     {
         this.character = character;
     }
