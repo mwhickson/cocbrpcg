@@ -18,7 +18,7 @@ public static class DefaultHelper
             (> 64) and (< 85) => -1,
             (> 84) and (< 125) => 0,
             (> 124) and (< 165) => 1,
-            (> 164) and (< 204) => 2,
+            (> 164) and (< 205) => 2,
             _ => null
         };
 
@@ -33,9 +33,9 @@ public static class DefaultHelper
         {
             (> 1) and (< 65) => "-2",
             (> 64) and (< 85) => "-1",
-            (> 84) and (< 125) => "auto",
+            (> 84) and (< 125) => "None",
             (> 124) and (< 165) => "1d4",
-            (> 164) and (< 204) => "1d6",
+            (> 164) and (< 205) => "1d6",
             _ => null
         };
 
@@ -70,7 +70,7 @@ public static class DefaultHelper
             total += r.Next(1, sides + 1);
         }
 
-        return total;
+        return total * 5;
     }
 
     public static int CalculateMagicPoints(int power)
