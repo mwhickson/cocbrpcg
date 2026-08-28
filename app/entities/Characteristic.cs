@@ -5,7 +5,7 @@ public class Characteristic : ICodedName
     private readonly string name;
     private readonly string code;
 
-    Characteristic(string name, string code)
+    public Characteristic(string name, string code)
     {
         this.name = name;
         this.code = code;

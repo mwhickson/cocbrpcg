@@ -16,7 +16,7 @@ public class Character
     private BackstoryEntry[] backstoryEntries;
     private Possession[] possessions; // gear, equipment, etc.
 
-    Character()
+    public Character()
     {
         // TODO:
         this.name = "";

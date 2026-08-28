@@ -5,7 +5,7 @@ public class SecondaryAttribute : ICodedName
     private readonly string name;
     private readonly string code;
 
-    SecondaryAttribute(string name, string code)
+    public SecondaryAttribute(string name, string code)
     {
         this.name = name;
         this.code = code;

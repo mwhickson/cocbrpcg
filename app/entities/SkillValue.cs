@@ -8,7 +8,7 @@ public class SkillValue: IScaledValue
     private readonly int value;
     private readonly string? specialization;
 
-    SkillValue(Skill skill, int value = 0, string? specialization = null)
+    public SkillValue(Skill skill, int value = 0, string? specialization = null)
     {
         this.skill = skill;
         this.value = value;

@@ -7,7 +7,7 @@ public class CharacteristicValue: IScaledValue
     private readonly Characteristic characteristic;
     private readonly int value;
 
-    CharacteristicValue(Characteristic characteristic, int value)
+    public CharacteristicValue(Characteristic characteristic, int value)
     {
         this.characteristic = characteristic;
         this.value = value;

@@ -9,7 +9,7 @@ public class SecondaryAttributeValue: IVariableValue
     private readonly int maximumValue;
     private readonly int minimumValue;
 
-    SecondaryAttributeValue(SecondaryAttribute attribute, int maximumValue, int currentValue, int minimumValue = 0)
+    public SecondaryAttributeValue(SecondaryAttribute attribute, int maximumValue, int currentValue, int minimumValue = 0)
     {
         this.attribute = attribute;
         this.currentValue = currentValue;

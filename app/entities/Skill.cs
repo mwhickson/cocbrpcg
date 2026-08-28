@@ -6,7 +6,7 @@ public class Skill
     private readonly int defaultValue;
     private readonly bool customizable;
 
-    Skill(string name, int defaultValue = 0, bool customizable = false)
+    public Skill(string name, int defaultValue = 0, bool customizable = false)
     {
         this.name = name;
         this.defaultValue = defaultValue;
