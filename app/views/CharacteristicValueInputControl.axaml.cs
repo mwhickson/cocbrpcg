@@ -1,0 +1,54 @@
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
+using System.Collections.Generic;
+
+namespace cocbrpcg.Views;
+
+public class CharacteristicValueInputControl : TemplatedControl
+{
+    public static readonly StyledProperty<List<int>> CharacteristicValueArrayProperty =
+        AvaloniaProperty.Register<CharacteristicValueInputControl, List<int>>(nameof(CharacteristicValueArray));
+
+    public static readonly StyledProperty<string> CharacteristicLabelProperty =
+        AvaloniaProperty.Register<CharacteristicValueInputControl, string>(nameof(CharacteristicLabel));
+
+    public static readonly StyledProperty<int> CharacteristicValueProperty =
+        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValue));
+
+    public static readonly StyledProperty<int> CharacteristicValueHalfProperty =
+        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueHalf));
+
+    public static readonly StyledProperty<int> CharacteristicValueFifthProperty =
+        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueFifth));
+
+    public List<int> CharacteristicValueArray
+    {
+       get => this.GetValue(CharacteristicValueArrayProperty);
+       set => SetValue(CharacteristicValueArrayProperty, value);
+    }
+
+    public string CharacteristicLabel
+    {
+       get => this.GetValue(CharacteristicLabelProperty);
+       set => SetValue(CharacteristicLabelProperty, value);
+    }
+
+    public int CharacteristicValue
+    {
+       get => this.GetValue(CharacteristicValueProperty);
+       set => SetValue(CharacteristicValueProperty, value);
+    }
+
+    public int CharacteristicValueHalf
+    {
+       get => this.GetValue(CharacteristicValueHalfProperty);
+       set => SetValue(CharacteristicValueHalfProperty, value);
+    }
+
+    public int CharacteristicValueFifth
+    {
+       get => this.GetValue(CharacteristicValueFifthProperty);
+       set => SetValue(CharacteristicValueFifthProperty, value);
+    }
+}

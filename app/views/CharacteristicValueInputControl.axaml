@@ -1,0 +1,26 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:cocbrpcg.Views">
+    <Design.PreviewWith>
+        <controls:CharacteristicValueInputControl />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|CharacteristicValueInputControl">
+        <!-- Set Defaults -->
+        <Setter Property="Background" Value="{DynamicResource CharacteristicValueInputBackground}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource CharacteristicValueInputForeground}"></Setter>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="{TemplateBinding Background}">
+                        <Label Content="{TemplateBinding CharacteristicLabel}" Foreground="{TemplateBinding Foreground}"></Label>
+                        <ComboBox SelectedValue="{TemplateBinding CharacteristicValue}" ItemsSource="{TemplateBinding CharacteristicValueArray}"></ComboBox>
+                        <Label Content="{TemplateBinding CharacteristicValueHalf}" Foreground="{TemplateBinding Foreground}"></Label>
+                        <Label Content="{TemplateBinding CharacteristicValueFifth}" Foreground="{TemplateBinding Foreground}"></Label>
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
