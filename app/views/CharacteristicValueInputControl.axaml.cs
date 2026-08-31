@@ -8,19 +8,19 @@ namespace cocbrpcg.Views;
 public class CharacteristicValueInputControl : TemplatedControl
 {
     public static readonly StyledProperty<List<int>> CharacteristicValueArrayProperty =
-        AvaloniaProperty.Register<CharacteristicValueInputControl, List<int>>(nameof(CharacteristicValueArray));
+        AvaloniaProperty.Register<CharacteristicValueInputControl, List<int>>(nameof(CharacteristicValueArray), []);
 
     public static readonly StyledProperty<string> CharacteristicLabelProperty =
-        AvaloniaProperty.Register<CharacteristicValueInputControl, string>(nameof(CharacteristicLabel));
+        AvaloniaProperty.Register<CharacteristicValueInputControl, string>(nameof(CharacteristicLabel), "XYZ");
 
     public static readonly StyledProperty<int> CharacteristicValueProperty =
-        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValue));
+        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValue), 0);
 
     public static readonly StyledProperty<int> CharacteristicValueHalfProperty =
-        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueHalf));
+        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueHalf), 0);
 
     public static readonly StyledProperty<int> CharacteristicValueFifthProperty =
-        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueFifth));
+        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueFifth), 0);
 
     public List<int> CharacteristicValueArray
     {
