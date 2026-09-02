@@ -15,7 +15,16 @@
                 <Border>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="{TemplateBinding Background}">
                         <Label Content="{TemplateBinding CharacteristicLabel}" Foreground="{TemplateBinding Foreground}"></Label>
-                        <ComboBox SelectedValue="{TemplateBinding CharacteristicValue}" ItemsSource="{TemplateBinding CharacteristicValueArray}"></ComboBox>
+                        <ComboBox SelectedValue="{TemplateBinding CharacteristicValue}">
+                            <ComboBoxItem Content="40"></ComboBoxItem>
+                            <ComboBoxItem Content="50"></ComboBoxItem>
+                            <ComboBoxItem Content="50"></ComboBoxItem>
+                            <ComboBoxItem Content="50"></ComboBoxItem>
+                            <ComboBoxItem Content="60"></ComboBoxItem>
+                            <ComboBoxItem Content="60"></ComboBoxItem>
+                            <ComboBoxItem Content="70"></ComboBoxItem>
+                            <ComboBoxItem Content="80"></ComboBoxItem>
+                        </ComboBox>
                         <Label Content="{TemplateBinding CharacteristicValueHalf}" Foreground="{TemplateBinding Foreground}"></Label>
                         <Label Content="{TemplateBinding CharacteristicValueFifth}" Foreground="{TemplateBinding Foreground}"></Label>
                     </StackPanel>

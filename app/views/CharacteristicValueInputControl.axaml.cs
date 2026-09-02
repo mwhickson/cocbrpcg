@@ -1,15 +1,11 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using System.Collections.Generic;
 
 namespace cocbrpcg.Views;
 
 public class CharacteristicValueInputControl : TemplatedControl
 {
-    public static readonly StyledProperty<List<int>> CharacteristicValueArrayProperty =
-        AvaloniaProperty.Register<CharacteristicValueInputControl, List<int>>(nameof(CharacteristicValueArray), []);
-
     public static readonly StyledProperty<string> CharacteristicLabelProperty =
         AvaloniaProperty.Register<CharacteristicValueInputControl, string>(nameof(CharacteristicLabel), "XYZ");
 
@@ -21,12 +17,6 @@ public class CharacteristicValueInputControl : TemplatedControl
 
     public static readonly StyledProperty<int> CharacteristicValueFifthProperty =
         AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueFifth), 0);
-
-    public List<int> CharacteristicValueArray
-    {
-       get => this.GetValue(CharacteristicValueArrayProperty);
-       set => SetValue(CharacteristicValueArrayProperty, value);
-    }
 
     public string CharacteristicLabel
     {
