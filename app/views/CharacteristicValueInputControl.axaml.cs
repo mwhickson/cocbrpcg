@@ -12,11 +12,11 @@ public class CharacteristicValueInputControl : TemplatedControl
     public static readonly StyledProperty<int> CharacteristicValueProperty =
         AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValue), 0);
 
-    public static readonly StyledProperty<int> CharacteristicValueHalfProperty =
-        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueHalf), 0);
+    public static readonly StyledProperty<int> CharacteristicValueHardProperty =
+        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueHard), 0);
 
-    public static readonly StyledProperty<int> CharacteristicValueFifthProperty =
-        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueFifth), 0);
+    public static readonly StyledProperty<int> CharacteristicValueExtremeProperty =
+        AvaloniaProperty.Register<CharacteristicValueInputControl, int>(nameof(CharacteristicValueExtreme), 0);
 
     public string CharacteristicLabel
     {
@@ -30,15 +30,15 @@ public class CharacteristicValueInputControl : TemplatedControl
        set => SetValue(CharacteristicValueProperty, value);
     }
 
-    public int CharacteristicValueHalf
+    public int CharacteristicValueHard // usually half
     {
-       get => this.GetValue(CharacteristicValueHalfProperty);
-       set => SetValue(CharacteristicValueHalfProperty, value);
+       get => this.GetValue(CharacteristicValueHardProperty);
+       set => SetValue(CharacteristicValueHardProperty, value);
     }
 
-    public int CharacteristicValueFifth
+    public int CharacteristicValueExtreme // usually a fifth
     {
-       get => this.GetValue(CharacteristicValueFifthProperty);
-       set => SetValue(CharacteristicValueFifthProperty, value);
+       get => this.GetValue(CharacteristicValueExtremeProperty);
+       set => SetValue(CharacteristicValueExtremeProperty, value);
     }
 }

@@ -7,10 +7,11 @@
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="/views/CharacteristicValueInputControl.axaml"></StyleInclude>
+        <StyleInclude Source="/views/SecondaryAttributeValueInputControl.axaml"></StyleInclude>
     </Application.Styles>
 
     <Application.Resources>
-        <SolidColorBrush x:Key="CharacteristicValueInputBackground">#000000</SolidColorBrush>
-        <SolidColorBrush x:Key="CharacteristicValueInputForeground">#ffffff</SolidColorBrush>
+        <SolidColorBrush x:Key="CharacteristicValueInputBackground">#ffffff</SolidColorBrush>
+        <SolidColorBrush x:Key="CharacteristicValueInputForeground">#000000</SolidColorBrush>
     </Application.Resources>
 </Application>

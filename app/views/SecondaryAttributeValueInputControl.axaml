@@ -1,0 +1,25 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:cocbrpcg.Views">
+    <Design.PreviewWith>
+        <controls:SecondaryAttributeValueInputControl />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|SecondaryAttributeValueInputControl">
+        <!-- Set Defaults -->
+        <Setter Property="Background" Value="{DynamicResource SecondaryAttributeValueInputBackground}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryAttributeValueInputForeground}"></Setter>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="{TemplateBinding Background}">
+                        <Label Content="{TemplateBinding SecondaryAttributeLabel}" Foreground="{TemplateBinding Foreground}"></Label>
+                        <Label Content="{TemplateBinding SecondaryAttributeValue}" Foreground="{TemplateBinding Foreground}"></Label>
+                        <Label Content="{TemplateBinding SecondaryAttributeValueCurrent}" Foreground="{TemplateBinding Foreground}"></Label>
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
